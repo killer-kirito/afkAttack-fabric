@@ -12,8 +12,9 @@
     "ThermalCube"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/afk-attack-fabric",
+    "sources": "https://github.com/killer-kirito/afkAttack-fabric",
+    "issues": "https://github.com/killer-kirito/afkAttack-fabric/issues"
   },
 
   "license": "CC BY-NC-SA 4.0",
