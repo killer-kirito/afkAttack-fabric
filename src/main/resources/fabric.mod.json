@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "afkattack",
+  "version": "1.0.0",
+
+  "name": "AFK Attack [Fabric]",
+  "description": "This mod allows you to use your afk attack farms while doing other stuff on your pc!",
+  "authors": [
+    "KiriKasuto"
+  ],
+  "contributors": [
+    "ThermalCube"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "CC BY-NC-SA 4.0",
+  "icon": "assets/afkattack/icon.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "de.kirito.afkattack.AfkAttack"
+    ]
+  },
+  "mixins": [
+    "afkattack.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+
+  }
+}
