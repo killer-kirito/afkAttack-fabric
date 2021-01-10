@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.LiteralText;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import org.lwjgl.glfw.GLFW;
@@ -26,11 +27,13 @@ public class AfkAttack implements ClientModInitializer {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if(stickyBinding.wasPressed()){
 				client.getSoundManager().play(PositionedSoundInstance.master(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP,0.1f));
+				client.player.sendMessage(new LiteralText("Turned afkAttack off"),true);
 				isDown = false;
 			}
 			if (stickyBinding.isPressed()) {
 				if(isDown == false){
 					client.getSoundManager().play(PositionedSoundInstance.master(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP,2.0f));
+					client.player.sendMessage(new LiteralText("Turned afkAttack on"),true);
 					isDown = true;
 				}
 				swing += .05f;
@@ -44,6 +47,7 @@ public class AfkAttack implements ClientModInitializer {
 							break;
 						case ENTITY:
 							EntityHitResult entityTarget = (EntityHitResult) target;
+							if(entityTarget.getEntity() instanceof PlayerEntity) break;
 							try {
 								client.interactionManager.attackEntity((PlayerEntity) client.player, entityTarget.getEntity());
 							}catch(Exception e) {
