@@ -1,0 +1,6 @@
+{
+  "text.autoconfig.afkattack.title": "AFK Attack Options",
+  "text.autoconfig.afkattack.option.EnableDing": "Enable Ding",
+  "text.autoconfig.afkattack.option.EnableActionbar": "Enable Actionbar",
+  "text.autoconfig.afkattack.option.EnableOnScreenState": "Enable On-Screen state"
+}
