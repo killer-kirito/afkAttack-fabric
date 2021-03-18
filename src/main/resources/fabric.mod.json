@@ -39,7 +39,7 @@
     "fabric": "*",
     "minecraft": "1.16.x",
     "autoconfig1u": "3.3.x",
-    "cloth-config2": "4.8.x"
+    "cloth-config2": "4.11.x"
   },
   "suggests": {
     "modmenu": ">=1.14.9+build.13"
